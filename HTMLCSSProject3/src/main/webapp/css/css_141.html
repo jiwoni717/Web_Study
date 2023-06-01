@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- 
+	반응,상태, 구조선택자 => 태그명(아이디명, 클래스명) : active... => 가상 선택자
+	=> 반응 선택자
+		:active, :hover(빈도가 많다) => img,a
+		--------------- 마우스 클릭, 마우스오버
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1#a:active {
+		color:red;
+	}
+	h1#a:hover {
+		color:green;
+		cursor:pointer;
+	}
+	
+	h1#b:hover {
+		color:blue;
+	}
+	h1#b:active {
+		color:magenta;
+	}
+	
+	h1#c:hover {
+		color:yellow;
+		
+	}
+	h1#c:active {
+		color:pink;
+	}
+	
+	
+	input[type="text"]:focus{
+		background-color: cyan;
+		color:white;
+	}
+	/* ul > li:first-child {
+		background-color: blue;
+		color:white;	
+	}
+	ul > li:last-child {
+		background-color: green;
+		color:white;	
+	}
+	h1 > span {
+		background-color: yellow;
+	}
+	ul > li:nth-child(2n) {
+		background-color: yellow;
+	} */
+	table>thead>tr:first-child {
+		background-color: orange;
+	}
+	table tbody tr:nth-child(2n) {
+		background-color: rgb(255,255,220);
+		
+	}
+	#menu > li {
+		list-style: none;
+		float:left;
+		padding: 15px;
+		width:120px;
+	}
+	#menu > li:nth-child(2n) {
+		background-color:#FFFF00
+	}
+	#menu > li:nth-child(2n+1) {
+		background-color: #FF0000
+	}
+	#menu > li:first-child {
+		border-radius: 20px 0px 0px 20px;	
+	}
+	#menu > li:last-child {
+		border-radius: 0px 20px 20px 0px;
+	}
+</style>
+</head>
+<body>
+	<center>
+		<h1>:active,:hover = 가상선택자(반응선택자)</h1>
+		<h1 id="a">Java 17</h1>
+		<h1 id="b">Oracle 21C</h1> <!-- hover:blue active:magenta -->
+		<h1 id="c">HTML5/CSS3</h1> <!-- hover:yellow active:pink -->
+		
+		<input type=text size=20><p>
+		
+		<!-- 
+			nth-child => 수열
+			nth-child(2n)
+			2n => 0 1 2
+			<li>홍길동</li>
+			<li>심청이</li> => y 
+			<li>춘향이</li>
+			<li>이순신</li> => y
+			<li>강감찬</li>
+			<li>을지문덕</li> => y
+			<li>박문수</li>
+		 -->
+		
+		<h1>구조선택자(:first-child, :last-child,<span style="color:red">nth-child</span>,nth-last-child</h1>
+		<ul>
+			<li>홍길동</li><!-- blue -->
+			<li>심청이</li>
+			<li>춘향이</li>
+			<li>이순신</li>
+			<li>강감찬</li>
+			<li>을지문덕</li>
+			<li>박문수</li><!-- green -->
+		</ul>
+		
+		<h1>nth-child -> table에서 적용</h1>
+		<table width=500 border=1 bordercolor=black>
+			<thead>
+				<tr>
+					<th>이름</th>
+					<th>국어</th>
+					<th>영어</th>
+					<th>수학</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>홍길동</td>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+				</tr>
+				<tr>
+					<td>심청이</td>
+					<td>90</td>
+					<td>90</td>
+					<td>90</td>
+				</tr>
+				<tr>
+					<td>박문수</td>
+					<td>75</td>
+					<td>75</td>
+					<td>75</td>
+				</tr>
+				<tr>
+					<td>이순신</td>
+					<td>85</td>
+					<td>85</td>
+					<td>85</td>
+				</tr>
+				<tr>
+					<td>강감찬</td>
+					<td>95</td>
+					<td>95</td>
+					<td>95</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<p>
+		
+		<ul id="menu">
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+			<li>홈</li>
+		</ul>
+		
+	</center>
+</body>
+</html>
