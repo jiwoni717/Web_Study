@@ -1,0 +1,90 @@
+<!-- 
+	1. SELECTOR
+	1) 태그 처리
+	2) ID명 처리(중복없이 단독으로 처리)
+	3) CLASS명 처리(중복이 존재)
+	-------------------------구분
+	4)가상선택자
+	2. CSS사용법
+	선택자 {
+		속성:값;
+		속성:값;
+		속성:값;
+		주석 => /**/
+		}
+	= 태그명 
+	<h1>Java</h1>
+	<h1>Oracle</h1>
+	<h1>HTML/CSS</h1>
+	<h1>JavaScript</h1>
+	----------------------Front
+	<h1>JSP</h1>
+	<h1>Spring</h1>
+	
+	<h1>AWS</h1>
+	
+	색상 변경 => <h1>
+	h1 {
+		color:red;
+	}
+	==> h1전체를 선택하는 경우
+	
+	==>CSS를 적용
+	1) 내부 css : 한파일에서 적용
+		<head>
+			<style>
+				선택자(태그) {
+					속성:값;
+					속성:값;
+					..	
+				}
+			</style>
+		</head>
+	2) 외부 css : 파일로 만든다(확장.css) => 여러개 파일에 공통으로 적용
+		<head>
+			<link rel="stylesheet" href="파일(경로명/파일명)/원격(http~~)">
+		</head>
+	3) 인라인 css : 해당 태그에만 적용
+		<태그 style=""> : 모든 태그는 style, id, class를 가지고 있다
+									|	-------------구분자 역할
+									디자인
+									=> name => 자바와 연동시에 데이터 전송
+									------Servlet/JSP/Spring/Spring-boot
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1{
+		/*스타일 적용*/
+		color:red;
+	}
+	h1#a{
+		color:yellow;
+	}
+	h1#b{
+		color:blue;
+	}
+	h1.c {
+		color:cyan;
+	}
+	h1.d {
+		color:magenta;
+	}
+	h1#e {
+		color:gray;
+	}
+</style>
+</head>
+<body>
+	<h1 id="a">Java:응용프로그램(데이터베이스 연동 / 브라우저 연동)</h1>
+	<h1 id="b">오라클 : 공통으로 사용되는 데이터를 저장/관리(SQL)</h1>
+	<h1 class="c">HTML/CSS : 브라우저에 출력만 담당 => 응용이 없다</h1>
+	<h1 class="c">JavaScript:Front-End : 프로그램언어 => 라이브러리(TypeScript)</h1>
+	<h1 class="d">JSP(Servlet) : 오라클과 브라우저를 연결해주는 역할</h1>
+	<h1 class="d">통합 => 모든 개발자가 동일한 코딩을 할 수 있게 만든다 : Spring</h1>
+	<h1 id="e">웹 호스팅 : AWS</h1>
+</body>
+</html>
