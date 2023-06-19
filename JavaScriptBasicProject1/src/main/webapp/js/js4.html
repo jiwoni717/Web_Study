@@ -1,0 +1,112 @@
+<!--
+		반복문
+		  do~while : 1번 이상 반복 수행
+		  while : 반복 횟수가 없는 경우
+		  for : 반복 횟수 지정시 사용
+		
+		for-each → 배열이 있는 경우 사용한다
+		  for of : 실제 데이터를 한개씩 읽어온다
+		  for in : 인덱스 번호를 읽는 경우
+		  forEach : for ~ of를 함수화
+		  map : for ~ of를 함수화
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style type="text/css">
+	.container {
+		margin-top: 50px;
+	}
+	.row {
+		margin: 0px auto;
+		width: 350px;
+	}
+	h2 {
+		text-align: center
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		document.write("<h2>do~while</h2>")
+		let i = 1;
+		do
+		{
+			document.write(i+"<br>");
+			i++;
+		}while(i<=10);
+		
+		document.write("<h2>while</h2>")
+		i = 1;
+		while(i<=10)
+		{
+			document.write(i+"<br>");
+			i++;
+		}
+		
+		document.write("<h2>for</h2>")
+		for(let i=1;i<=10;i++)
+		{
+			document.write(i+"<br>");
+		}
+		
+		document.write("<h2>for</h2>")
+		
+		let names=["홍길동", "이순신", "춘항이", "강감찬", "박문수"];
+		let sexs=["남자", "남자", "여자", "남자", "남자"];
+		
+		// 1. 일반 for문
+		document.write("<h2>일반 for문</h2>")
+		
+		for(let i=0;i<names.length;i++)
+		{
+			document.write(names[i]+"&nbsp;"+sexs[i]+"<br>")
+		}
+		
+		// 2. for-of
+		document.write("<h2>for-of</h2>")
+		for(let name of names) // == for(String name:names)
+		{
+			document.write(name+"&nbsp;")
+		}
+		
+		// 3. for-in
+		document.write("<h2>for-in</h2>")
+		for(let i in names) // 실제 데이터값을 가져오는게 아닌 인덱스값을 가져옴
+		{
+			document.write(names[i]+"(성별 : "+sexs[i]+")<br>")
+		}
+		
+		// 4. for-each
+		document.write("<h2>forEach</h2>")
+		names.forEach(function(name){ // names에 있는 데이터를 매개변수로 읽어서 처리
+			document.write(name+"&nbsp;")
+		})
+		
+		// 5. map
+		document.write("<h2>map</h2>")
+		names.map(function(name){
+			document.write(name+"&nbsp;")
+		})
+		
+		// 6. 화살표 함수***********
+		document.write("<h2>forEach문 화살표 사용</h2>")
+		names.forEach((name)=>{
+			document.write(name+"&nbsp;")
+		})
+		
+		// 7. 화살표 함수***********
+		document.write("<h2>map 화살표 사용</h2>")
+		names.map((name)=>{
+			document.write(name+"&nbsp;")
+		})
+		
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

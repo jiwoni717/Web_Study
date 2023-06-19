@@ -1,0 +1,72 @@
+<!--
+		자바스크립트에서 지원하는 기본 내장 객체
+		  String
+		    └substring(시작번호, 끝번호) : 문자열은 0번부터 시작, 끝번호는 제외
+		    └indexOf() : 찾기
+		    └trim()
+		    └length()
+		    └split() : 문자 분리 → 배열 리턴형
+		    └slice() : 특정 위치에서 문자열을 잘라낸다
+		  Number
+		    - 문자열 형변환할 때 : Number(문자열), parseInt()
+		    └NaN : Not a Number
+		  Array
+		    └map(콜백함수) : 반복
+		    └pop() : 마지막 요소 제거
+		    └push() : 마지막에 값 추가
+		    └sort() : 정렬
+		    └slice(시작, 끝) : 특정 위치의 배열 값을 다른 배열에 저장
+		  Math
+		    └round() : 반올림
+		  Date
+		  
+		브라우저 내장 객체
+		  window : 브라우저 → open
+		    └location* : 화면 이동 → <a>
+		    └document* : 화면 제어
+		    └screen : 화면 크기 → 스크롤
+		    └history* : 방문한 기록
+		      └back()
+		      └forward()
+		      └go
+		    └event : 모든 함수는 이벤트를 포함
+		    
+		태그 찾아서 값 설정
+		  1) <input>에 값 설정
+		    태그를 가지고 온다
+		    let id = document.querySelector("#id")
+		  2) 태그에 직접 값 설정
+		    id.value="값"
+		  3) 태그와 태그사이에 값을 설정
+		    <span></span>
+		    - 태그를 가지고온다
+		      let span = document.querySelector("span")
+		    - 값 첨부
+		      span.innerHTML=값...
+		
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload=()=>{
+		let h2 = document.querySelectorAll("h2")
+		for(let i of h2)
+		{
+			h2.style.background='red'
+			h2.innerHTML="Hello JS!!!"
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<h2>Hello JavaScript-1</h2>
+	<h2>Hello JavaScript-2</h2>
+	<h2>Hello JavaScript-3</h2>
+	<h2>Hello JavaScript-4</h2>
+	<h2>Hello JavaScript-5</h2>
+</body>
+</html>
