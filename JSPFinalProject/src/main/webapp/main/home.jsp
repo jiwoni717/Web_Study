@@ -55,15 +55,15 @@
     <!-- ################################################################################################ -->
     <div class="flexslider carousel basiccarousel btmspace-80">
       <ul class="slides">
-      <c:forEach var="vo" items="${list }" varStatus="s">
-	      <c:if test="${s.index>=0 && s.index<12 }">
-	        <li>
-	          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
-	            <figcaption><a href="#">${vo.title }</a></figcaption>
-	          </figure>
-	        </li>
-	      </c:if>
-      </c:forEach>
+      	<c:forEach var="vo" items="${list }" varStatus="s">
+      		<c:if test="${s.index>=0 && s.index<12 }">
+	      		<li>
+		          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
+		            <figcaption><a href="#">${vo.title}</a></figcaption>
+		          </figure>
+		        </li>
+      		</c:if>
+      	</c:forEach>
       </ul>
     </div>
     
@@ -71,15 +71,15 @@
     <!-- ################################################################################################ -->
     <div class="flexslider carousel basiccarousel btmspace-80">
       <ul class="slides">
-      <c:forEach var="vo" items="${list }" varStatus="s">
-	      <c:if test="${s.index>=12 && s.index<18 }">
-	        <li>
-	          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
-	            <figcaption><a href="#">${vo.title }</a></figcaption>
-	          </figure>
-	        </li>
-	      </c:if>
-      </c:forEach>
+        <c:forEach var="vo" items="${list }" varStatus="s">
+      		<c:if test="${s.index>=12 && s.index<18 }">
+	      		<li>
+		          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
+		            <figcaption><a href="#">${vo.title}</a></figcaption>
+		          </figure>
+		        </li>
+      		</c:if>
+      	</c:forEach>
       </ul>
     </div>
     
@@ -87,15 +87,15 @@
     <!-- ################################################################################################ -->
     <div class="flexslider carousel basiccarousel btmspace-80">
       <ul class="slides">
-	  <c:forEach var="vo" items="${list }" varStatus="s">
-	      <c:if test="${s.index>=18 && s.index<30 }">
-	        <li>
-	          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
-	            <figcaption><a href="#">${vo.title }</a></figcaption>
-	          </figure>
-	        </li>
-	      </c:if>
-      </c:forEach>
+        <c:forEach var="vo" items="${list }" varStatus="s">
+      		<c:if test="${s.index>=18 && s.index<30 }">
+	      		<li>
+		          <figure><img class="radius-10 btmspace-10" src="${vo.poster }" alt="">
+		            <figcaption><a href="#">${vo.title}</a></figcaption>
+		          </figure>
+		        </li>
+      		</c:if>
+      	</c:forEach>
       </ul>
     </div>
     
