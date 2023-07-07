@@ -275,7 +275,7 @@ public class FoodDAO {
 		try {
 			getConnection();
 			
-			String sql = "SELECT fno, cno, name, score, poster, address, type, parking, time, menu, phone, price "
+			String sql = "SELECT fno, cno, name, score, poster, address, type, parking, time, menu, tel, price "
 					+ "FROM food_house "
 					+ "WHERE fno=?";
 			ps = conn.prepareStatement(sql);
