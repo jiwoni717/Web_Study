@@ -13,6 +13,30 @@
 		width: 1024px;
 	}
 </style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+let i=0;
+$(function() {
+	$('.ups').click(function() {
+		$('.updates').hide();
+		$('.ups').text("수정");
+		let no = $(this).attr("data-no");
+		if(i===0)
+		{
+			$(this).text("취소");
+			$('#u'+no).show();
+			i=1;
+		}
+		else
+		{
+			$(this).text("수정");
+			$('#u'+no).hide();
+			i=0;
+		}
+		
+	})
+})
+</script>
 </head>
 <body>
 <div class="wrapper row3">
@@ -99,8 +123,8 @@
 	  						<form method="post" action="../reply/reply_insert.do">
 	  							<input type=hidden name="cno" value="${vo.fno }">
 	  							<input type=hidden name="type" value="1">
-	  							<textarea rows="5" cols="60" name="msg" style="float: left"></textarea>
-	  							<input type=submit class="btn btn-sm btn-default" value="댓글 쓰기" style="width:120px; height: 104px">
+	  							<textarea rows="5" cols="72" name="msg" style="float: left"></textarea>
+	  							<input type=submit class="btn btn-sm btn-default" value="댓글 쓰기" style="width:120px; height: 106px">
 	  						</form>
 	  						</td>
 	  					</tr>
@@ -115,14 +139,28 @@
   										<td class="text-left">♥&nbsp;${rvo.name }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${rvo.dbday }</td>
   										<td class="text-right">
   											<c:if test="${sessionScope.id==rvo.id }">
-  												<a href="#" class="btn btn-xs btn-default">수정</a>
-  												<a href="#" class="btn btn-xs btn-default">삭제</a>
+  												<span class="btn btn-xs btn-default ups" data-no="${rvo.no }">수정</span>
+  												<a href="../reply/reply_delete.do?no=${rvo.no }&type=${rvo.type }&cno=${rvo.cno }" class="btn btn-xs btn-default">삭제</a>
   											</c:if>
   										</td>
   									</tr>
   									<tr>
   										<td colspan=2 valign="top" class="text-left"><pre style="white-space: pre-wrap; background-color: white; border: none;">${rvo.msg }</pre></td>
   									</tr>
+  									
+ 									<%-- 댓글 수정 --%>
+  									<tr style="display: none" class="updates" id="u${rvo.no }">
+				  						<td colspan=2>
+				  						<form method="post" action="../reply/reply_update.do">
+				  							<input type=hidden name="no" value=${rvo.no }>
+				  							<input type=hidden name="cno" value="${vo.fno }">
+				  							<input type=hidden name="type" value="1">
+				  							<textarea rows="5" cols="65" name="msg" style="float: left">${rvo.msg }</textarea>
+				  							<input type=submit class="btn btn-sm btn-default" value="댓글 수정" style="width:120px; height: 106px">
+				  						</form>
+				  						</td>
+				  					</tr>
+				  					
   								</table>
   							</c:forEach>
   						</td>

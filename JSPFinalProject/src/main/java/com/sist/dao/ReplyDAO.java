@@ -74,5 +74,40 @@ public class ReplyDAO {
 			db.disConnection(conn, cs);
 		}
 	}
-
+	
+	// 댓글 수정
+	public void replyUpdate(int no, String msg) {
+		try {
+			conn = db.getConnection();
+			
+			String sql = "{CALL replyUpdate(?,?)}";
+			cs = conn.prepareCall(sql);
+			cs.setInt(1, no);
+			cs.setString(2, msg);
+			cs.executeQuery();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, cs);
+		}
+	}
+	
+	// 댓글 삭제
+	public void replyDelete(int no) {
+		try {
+			conn = db.getConnection();
+			
+			String sql = "{CALL replyDelete(?)}";
+			cs = conn.prepareCall(sql);
+			cs.setInt(1, no);
+			cs.executeQuery();
+			
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			db.disConnection(conn, cs);
+		}
+	}
+	
 }
